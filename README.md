@@ -1,6 +1,6 @@
 # Wikipedia Web Crawler
 
-A Node.js tool that crawls Wikipedia articles to build a knowledge graph and extract key information. This tool uses JigsawStack's (AI Web Scraper)[https://jigsawstack.com/ai-web-scraper] to intelligently parse Wikipedia articles and follow related links, creating a connected map of knowledge on a topic.
+A Node.js tool that crawls Wikipedia articles to build a knowledge graph and extract key information. This tool uses JigsawStack's [AI Web Scraper](https://jigsawstack.com/ai-web-scraper) to intelligently parse Wikipedia articles and follow related links, creating a connected map of knowledge on a topic.
 
 ## Features
 
