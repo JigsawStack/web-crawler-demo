@@ -1,0 +1,6 @@
+{
+    "type": "module",
+    "dependencies": {
+      "jigsawstack": "^0.0.17"
+    }
+  }
