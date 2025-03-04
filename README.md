@@ -161,14 +161,6 @@ The crawler accepts several configuration options:
 - Wikipedia's structure may change, potentially affecting extraction quality
 - Respect Wikipedia's terms of service and avoid excessive crawling
 
-## Future Improvements
-
-- Visualization tools for the knowledge graph
-- Support for other languages
-- Topic-based filtering to stay within a specific domain
-- Integration with other knowledge sources
-- Natural language search across the collected knowledge
-
 ## Dependencies
 
 - [JigsawStack](https://jigsawstack.com/ai-web-scraper) - AI Web Scraper
