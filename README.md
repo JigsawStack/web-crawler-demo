@@ -1,30 +1,42 @@
-Wikipedia Knowledge Crawler
+# Wikipedia Knowledge Crawler
+
 A Node.js tool that crawls Wikipedia articles to build a knowledge graph and extract key information. This tool uses JigsawStack's AI web scraper to intelligently parse Wikipedia articles and follow related links, creating a connected map of knowledge on a topic.
-Features
 
-🔍 Smart Content Extraction - Extracts article titles, introductions, key concepts, and image captions
-🕸️ Knowledge Graph Building - Creates a graph of related concepts by following relevant links
-🧠 Intelligent Link Selection - Prioritizes links most relevant to the current article
-🌐 English Wikipedia Focus - Filters to ensure only English Wikipedia content is processed
-⚡ Efficient Crawling - Configurable depth and breadth limits with built-in delays to respect servers
-🔄 Error Handling - Includes retry logic with simplified parameters for failed requests
+## Features
 
-Installation
-# Clone the repository
+- 🔍 **Smart Content Extraction** - Extracts article titles, introductions, key concepts, and image captions
+- 🕸️ **Knowledge Graph Building** - Creates a graph of related concepts by following relevant links
+- 🧠 **Intelligent Link Selection** - Prioritizes links most relevant to the current article
+- 🌐 **English Wikipedia Focus** - Filters to ensure only English Wikipedia content is processed
+- ⚡ **Efficient Crawling** - Configurable depth and breadth limits with built-in delays to respect servers
+- 🔄 **Error Handling** - Includes retry logic with simplified parameters for failed requests
+
+## Installation
+
+Clone the repository:
 ```bash
 git clone https://github.com/yourusername/wikipedia-knowledge-crawler.git
 cd wikipedia-knowledge-crawler
 ```
-# Install dependencies
+
+Install dependencies:
 ```bash
 npm install jigsawstack
 ```
-# Configuration
-Before using the crawler, you need to sign up for a JigsawStack API key at jigsawstack.com.
-Create a .env file in the project root:
-JIGSAWSTACK_API_KEY=your_api_key_here
 
-# Usage
+## Configuration
+
+Before using the crawler, you need to sign up for a JigsawStack API key at [jigsawstack.com](https://jigsawstack.com).
+
+Create a `.env` file in the project root:
+```
+JIGSAWSTACK_API_KEY=your_api_key_here
+```
+
+## Usage
+
+### JavaScript API
+
 ```javascript
 // Basic usage
 const crawler = require('./wikipedia-crawler');
@@ -38,27 +50,29 @@ crawler.start({
 });
 ```
 
-# Command Line Usage
+### Command Line Usage
 
-Run with default settings (Machine Learning as seed topic)
+Run with default settings (Machine Learning as seed topic):
 ```bash 
 node index.js
 ```
 
-# Run with custom topic
+Run with custom topic:
 ```bash
 node index.js --seed="https://en.wikipedia.org/wiki/Artificial_intelligence" --depth=2 --breadth=5
 ```
 
-# Example Output
+## Example Output
+
 The crawler generates a detailed output including:
+- Article Summaries - Introduction and key concepts for each article
+- Knowledge Graph - Connections between related articles
+- Crawl Statistics - Number of articles, depth, crawl time
 
-Article Summaries - Introduction and key concepts for each article
-Knowledge Graph - Connections between related articles
-Crawl Statistics - Number of articles, depth, crawl time
+### Example console output:
 
-Example console output:
-Copy=== WIKIPEDIA KNOWLEDGE CRAWLER RESULTS ===
+```
+=== WIKIPEDIA KNOWLEDGE CRAWLER RESULTS ===
 
 Total articles crawled: 4
 Seed article: https://en.wikipedia.org/wiki/Machine_learning
@@ -85,9 +99,14 @@ Crawl time: February 26, 2025, 3:45:12 PM
 
 Nodes: 4
 Connections: 3
-Saved Output Format
+```
+
+### Saved Output Format
+
 When saving to a file, the crawler produces a JSON structure:
-jsonCopy{
+
+```json
+{
   "articles": [
     {
       "title": "Machine learning",
@@ -117,9 +136,14 @@ jsonCopy{
     "maxArticlesPerLevel": 3
   }
 }
-Advanced Configuration
+```
+
+## Advanced Configuration
+
 The crawler accepts several configuration options:
-javascriptCopy{
+
+```javascript
+{
   seedUrl: "https://en.wikipedia.org/wiki/Machine_learning", // Starting point
   maxDepth: 2,             // How many links deep to follow
   maxArticlesPerLevel: 5,  // Maximum links to follow from each article
@@ -128,23 +152,24 @@ javascriptCopy{
   outputFile: "output.json", // File to save results (optional)
   retryFailedRequests: true // Whether to retry failed requests
 }
+```
 
-# Limitations
+## Limitations
 
-The crawler only works with English Wikipedia articles
-Performance depends on JigsawStack's AI web scraper capabilities
-Wikipedia's structure may change, potentially affecting extraction quality
-Respect Wikipedia's terms of service and avoid excessive crawling
+- The crawler only works with English Wikipedia articles
+- Performance depends on JigsawStack's AI web scraper capabilities
+- Wikipedia's structure may change, potentially affecting extraction quality
+- Respect Wikipedia's terms of service and avoid excessive crawling
 
-# Future Improvements
+## Future Improvements
 
-Visualization tools for the knowledge graph
-Support for other languages
-Topic-based filtering to stay within a specific domain
-Integration with other knowledge sources
-Natural language search across the collected knowledge
+- Visualization tools for the knowledge graph
+- Support for other languages
+- Topic-based filtering to stay within a specific domain
+- Integration with other knowledge sources
+- Natural language search across the collected knowledge
 
-# Dependencies
+## Dependencies
 
-JigsawStack - (AI Web Scraper)[https://jigsawstack.com/ai-web-scraper]
-Node.js (v14 or higher)
+- [JigsawStack](https://jigsawstack.com/ai-web-scraper) - AI Web Scraper
+- Node.js (v14 or higher)
